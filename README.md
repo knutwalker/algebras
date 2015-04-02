@@ -46,7 +46,7 @@ There are some additional methods, like `chooseInt(a, b)` which return an in in 
 ## Using Effect
 
 Any method, that produces an effect using an algebra must be paramterized in a type `F[_]`
-with a view bound for the algebra that this method uses. The return type is `Effect[F, A]` where `A` is the methods actual return type.
+with a context bound for the algebra that this method uses. The return type is `Effect[F, A]` where `A` is the methods actual return type.
 
 At the end of the universe, you have a composed `Effect[F, A]` that you need to run.
 
@@ -108,7 +108,7 @@ object edgeOfTheWorld {
 
 There are two basic interpreters already available.
 
-`algebra-interpreter-rng` which uses a [NICTA/rng](https://github.com/NICTA/rng) for the random number generation.
+`algebra-interpreter-rng` which uses [NICTA/rng](https://github.com/NICTA/rng) for the random number generation.
 `algebra-interpreter-slf4j` which uses slf4j (duh) to log the messages. 
 
 
